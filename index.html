@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#16a34a">
+<meta name="description" content="SAFKart — local groceries and everyday essentials, connected from shop to doorstep.">
+<title>SAFKart — Local shopping, beautifully connected</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="app">
+
+<header class="header">
+
+  <a class="logo" href="#home" aria-label="SAFKart home">
+    <span>S</span> SAF<span>Kart</span>
+  </a>
+
+  <button
+    class="menu"
+    id="menu"
+    type="button"
+    aria-label="Open navigation"
+    aria-expanded="false"
+  >
+    <i></i>
+    <i></i>
+  </button>
+
+  <nav id="nav">
+    <a href="#home">Home</a>
+    <a href="#journey">Journey</a>
+    <a href="#roles">Flows</a>
+    <a href="#download">Apps</a>
+  </nav>
+
+</header>
+
+
+<main>
+
+<section class="hero" id="home">
+
+  <div class="hero-copy">
+
+    <p class="kicker">
+      LOCAL COMMERCE / ONE CONNECTED EXPERIENCE
+    </p>
+
+    <h1>
+      Daily essentials.<br>
+      <strong>Delivered differently.</strong>
+    </h1>
+
+    <p class="lead">
+      SAFKart brings customers, local shops and delivery partners together —
+      from the first tap to the final doorstep.
+    </p>
+
+    <div class="actions">
+      <a class="primary" href="#journey">
+        Explore the journey <b>↓</b>
+      </a>
+    </div>
+
+  </div>
+
+
+  <!-- 3D DELIVERY SCENE -->
+
+  <div
+    class="hero-3d"
+    id="hero3d"
+    aria-label="SAFKart delivery journey animation"
+  >
+
+    <div class="grid-floor"></div>
+
+    <div class="halo h1"></div>
+    <div class="halo h2"></div>
+
+
+    <!-- HOME / START POINT -->
+
+    <div class="scene-place home-place" id="homePlace">
+
+      <div class="place-building">
+        🏠
+      </div>
+
+      <span class="scene-label">
+        HOME
+      </span>
+
+    </div>
+
+
+    <!-- SHOP -->
+
+    <div class="scene-place shop-place" id="shopPlace">
+
+      <div class="place-building">
+        🏪
+      </div>
+
+      <span class="scene-label">
+        SHOP
+      </span>
+
+    </div>
+
+
+    <!-- CUSTOMER -->
+
+    <div class="scene-place customer-place" id="customerPlace">
+
+      <div class="place-building">
+        👤
+      </div>
+
+      <span class="scene-label">
+        CUSTOMER
+      </span>
+
+    </div>
+
+
+    <!-- DELIVERY RIDER -->
+
+    <div
+      class="delivery-rider"
+      id="deliveryRider"
+    >
+
+      <div class="rider-person">
+        🧑
+      </div>
+
+      <div class="rider-scooter">
+        🛵
+      </div>
+
+
+      <!-- TRANSPARENT DELIVERY BOX -->
+
+      <div
+        class="delivery-box"
+        id="deliveryBox"
+        aria-label="Transparent delivery box containing groceries"
+      >
+
+        <div class="box-item item-fruit">
+          🍎
+        </div>
+
+        <div class="box-item item-vegetable">
+          🥦
+        </div>
+
+        <div class="box-item item-grocery">
+          🛍️
+        </div>
+
+        <div class="box-item item-pet">
+          🐶
+        </div>
+
+        <div class="box-item item-carrot">
+          🥕
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- PAYMENT -->
+
+    <div
+      class="payment"
+      id="payment"
+    >
+      💰
+    </div>
+
+
+    <!-- ORDER HANDOVER -->
+
+    <div
+      class="handover"
+      id="handover"
+    >
+      📦
+    </div>
+
+
+    <!-- ROUTE -->
+
+    <div class="route r1"></div>
+    <div class="route r2"></div>
+    <div class="route r3"></div>
+
+
+    <!-- ANIMATION STATUS -->
+
+    <div
+      class="delivery-status"
+      id="deliveryStatus"
+      aria-live="polite"
+    >
+      RIDING TO SHOP
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TICKER -->
+
+<section class="ticker">
+
+  <div>
+    <span>GROCERIES</span> ✦
+    <span>VEGETABLES</span> ✦
+    <span>FRUITS</span> ✦
+    <span>PET FOOD</span> ✦
+    <span>BABY CARE</span> ✦
+    <span>DAILY ESSENTIALS</span> ✦
+    <span>GROCERIES</span> ✦
+    <span>VEGETABLES</span>
+  </div>
+
+</section>
+
+
+<!-- ORDER JOURNEY -->
+
+<section class="journey section" id="journey">
+
+  <div class="section-head">
+
+    <p class="kicker">
+      01 / ORDER JOURNEY
+    </p>
+
+    <h2>
+      Watch one order<br>
+      <strong>move through SAFKart.</strong>
+    </h2>
+
+    <p>
+      Tap each stage. The network reacts as the order moves forward.
+    </p>
+
+  </div>
+
+
+  <div class="journey-stage">
+
+    <div class="network-line">
+      <span id="progressLine"></span>
+    </div>
+
+    <div
+      class="journey-node active"
+      data-step="0"
+    >
+      <b>01</b>
+      <span>🛒</span>
+      <strong>Order</strong>
+      <small>Customer</small>
+    </div>
+
+    <div
+      class="journey-node"
+      data-step="1"
+    >
+      <b>02</b>
+      <span>🏪</span>
+      <strong>Prepare</strong>
+      <small>Shop</small>
+    </div>
+
+    <div
+      class="journey-node"
+      data-step="2"
+    >
+      <b>03</b>
+      <span>🛵</span>
+      <strong>Pickup</strong>
+      <small>Delivery</small>
+    </div>
+
+    <div
+      class="journey-node"
+      data-step="3"
+    >
+      <b>04</b>
+      <span>✓</span>
+      <strong>Delivered</strong>
+      <small>Customer</small>
+    </div>
+
+  </div>
+
+
+  <div
+    class="journey-info"
+    id="journeyInfo"
+  >
+
+    <div class="big-icon">
+      🛒
+    </div>
+
+    <div>
+
+      <p class="kicker">
+        CUSTOMER
+      </p>
+
+      <h3>
+        Order placed
+      </h3>
+
+      <p>
+        Choose products, filter what you need,
+        add them to the cart and check out.
+      </p>
+
+    </div>
+
+    <span class="status">
+      ORDER PLACED
+    </span>
+
+  </div>
+
+</section>
+
+
+<!-- ROLE FLOWS -->
+
+<section class="roles section" id="roles">
+
+  <div class="section-head">
+
+    <p class="kicker">
+      02 / ROLE FLOWS
+    </p>
+
+    <h2>
+      Three roles.<br>
+      <strong>Three focused experiences.</strong>
+    </h2>
+
+  </div>
+
+
+  <div
+    class="role-switch"
+    role="tablist"
+  >
+
+    <button
+      class="selected"
+      data-role="customer"
+      type="button"
+    >
+      Customer
+    </button>
+
+    <button
+      data-role="shop"
+      type="button"
+    >
+      Shop owner
+    </button>
+
+    <button
+      data-role="delivery"
+      type="button"
+    >
+      Delivery boy
+    </button>
+
+  </div>
+
+
+  <div
+    class="role-card"
+    id="roleCard"
+  >
+
+    <div class="role-visual">
+
+      <div
+        class="role-object"
+        id="roleObject"
+      >
+        🛒
+      </div>
+
+      <span id="roleMini">
+        CUSTOMER APP
+      </span>
+
+    </div>
+
+
+    <div class="role-content">
+
+      <p
+        class="kicker"
+        id="roleKicker"
+      >
+        CUSTOMER FLOW
+      </p>
+
+      <h3 id="roleTitle">
+        Find it. Filter it. Order it.
+      </h3>
+
+      <p id="roleDesc">
+        The customer journey stays simple,
+        from discovering nearby products to tracking the order.
+      </p>
+
+      <div
+        class="steps"
+        id="roleSteps"
+      ></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CUSTOMER FILTER -->
+
+<section
+  class="filter section"
+  id="customer-filter"
+>
+
+  <div>
+
+    <p class="kicker">
+      03 / CUSTOMER FILTER FLOW
+    </p>
+
+    <h2>
+      Less searching.<br>
+      <strong>More finding.</strong>
+    </h2>
+
+    <p class="muted">
+      A lightweight interactive example of how customers
+      can narrow everyday products.
+    </p>
+
+  </div>
+
+
+  <div class="filter-ui">
+
+    <div class="search">
+
+      <span>⌕</span>
+
+      <input
+        id="search"
+        type="search"
+        placeholder="Search essentials..."
+        aria-label="Search products"
+      >
+
+    </div>
+
+
+    <div class="filters">
+
+      <button
+        class="on"
+        data-filter="all"
+        type="button"
+      >
+        All
+      </button>
+
+      <button
+        data-filter="Grocery"
+        type="button"
+      >
+        Grocery
+      </button>
+
+      <button
+        data-filter="Vegetable"
+        type="button"
+      >
+        Vegetables
+      </button>
+
+      <button
+        data-filter="Pet"
+        type="button"
+      >
+        Pet
+      </button>
+
+      <button
+        data-filter="Baby"
+        type="button"
+      >
+        Baby
+      </button>
+
+    </div>
+
+
+    <div
+      class="products"
+      id="products"
+    ></div>
+
+
+    <p
+      class="result"
+      id="result"
+      aria-live="polite"
+    ></p>
+
+  </div>
+
+</section>
+
+
+<!-- DOWNLOAD -->
+
+<section
+  class="download section"
+  id="download"
+>
+
+  <div class="download-box">
+
+    <div>
+
+      <p class="kicker">
+        04 / LAUNCH
+      </p>
+
+      <h2>
+        One network.<br>
+        <strong>Your role.</strong>
+      </h2>
+
+      <p class="muted">
+        Choose the SAFKart app built for how you use the network.
+      </p>
+
+    </div>
+
+
+    <div class="apk-list">
+
+      <a href="apks/safkart_customer.apk">
+
+        <span>🛒</span>
+
+        <div>
+          <small>SAFKART</small>
+          <b>Customer App</b>
+        </div>
+
+        <em>↓</em>
+
+      </a>
+
+
+      <a href="apks/safkart_shop.apk">
+
+        <span>🏪</span>
+
+        <div>
+          <small>SAFKART</small>
+          <b>Shop App</b>
+        </div>
+
+        <em>↓</em>
+
+      </a>
+
+
+      <a href="apks/safkart_delivery.apk">
+
+        <span>🛵</span>
+
+        <div>
+          <small>SAFKART</small>
+          <b>Delivery App</b>
+        </div>
+
+        <em>↓</em>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+  <a
+    class="logo"
+    href="#home"
+  >
+    <span>S</span> SAF<span>Kart</span>
+  </a>
+
+  <p>
+    Local essentials. One connected network.
+  </p>
+
+  <small>
+    © <span id="year"></span> SAFKart
+  </small>
+
+</footer>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
