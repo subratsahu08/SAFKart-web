@@ -4,6 +4,10 @@ SAFKart is a local commerce platform connecting customers, local shops, and deli
 
 This repository contains the SAFKart public launch website, where users can learn about the platform and download the available SAFKart applications.
 
+## 🌐 Live Website
+
+**[SAFKart Web](https://saf-kart-web.vercel.app/)**
+
 ## 🌐 SAFKart Ecosystem
 
 The SAFKart platform connects three main roles:
@@ -91,4 +95,4 @@ SAFKart/
 └── apks/
     ├── safkart_customer.apk
     ├── safkart_shop.apk
-    └── safkart_delivery.apk
+    └── safkart_delivery.apk 
