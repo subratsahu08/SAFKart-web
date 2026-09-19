@@ -37,7 +37,9 @@ input {
 }
 
 
-/* HEADER */
+/* ============================================================
+   HEADER
+   ============================================================ */
 
 .header {
     position: fixed;
@@ -125,7 +127,9 @@ nav a:active {
 }
 
 
-/* HERO */
+/* ============================================================
+   HERO
+   ============================================================ */
 
 .hero {
     padding: 105px 18px 45px;
@@ -192,73 +196,91 @@ h2 strong {
 
 
 /* ============================================================
-   3D DELIVERY SCENE
+   SAFKART 2D DELIVERY SCENE
    ============================================================ */
 
 .hero-3d {
     position: relative;
-    height: 410px;
-    margin-top: 20px;
+    width: 100%;
+    height: 430px;
+    margin-top: 18px;
     overflow: hidden;
     border-radius: 30px;
-    perspective: 1000px;
-    transform-style: preserve-3d;
+
     background:
         radial-gradient(
-            circle at 50% 42%,
-            #effaf2 0,
-            #f8fbf9 62%
+            circle at 50% 48%,
+            #effaf2 0%,
+            #f8fbf9 68%
         );
+
+    isolation: isolate;
 }
 
 
-/* FLOOR */
+/* ============================================================
+   SOFT FLOOR
+   ============================================================ */
 
 .grid-floor {
     position: absolute;
-    width: 160%;
-    height: 60%;
-    left: -30%;
-    bottom: -20%;
-    opacity: .65;
+    width: 150%;
+    height: 45%;
+    left: -25%;
+    bottom: -12%;
+
+    opacity: .38;
+
     background:
         linear-gradient(
-            rgba(22, 163, 74, .1) 1px,
+            rgba(22, 163, 74, .08) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(22, 163, 74, .1) 1px,
+            rgba(22, 163, 74, .08) 1px,
             transparent 1px
         );
-    background-size: 25px 25px;
+
+    background-size: 24px 24px;
+
     transform:
-        perspective(350px)
-        rotateX(63deg);
+        perspective(450px)
+        rotateX(62deg);
+
+    pointer-events: none;
 }
 
 
-/* HALOS */
+/* ============================================================
+   CENTRAL GLOW
+   ============================================================ */
 
 .halo {
     position: absolute;
     left: 50%;
-    top: 52%;
-    border: 1px solid rgba(22, 163, 74, .15);
+    top: 53%;
+
+    border: 1px solid rgba(22, 163, 74, .13);
+
     border-radius: 50%;
+
     transform:
         translate(-50%, -50%)
         rotateX(65deg);
+
+    pointer-events: none;
 }
 
 .h1 {
-    width: 330px;
-    height: 150px;
+    width: 290px;
+    height: 170px;
 }
 
 .h2 {
-    width: 245px;
-    height: 110px;
+    width: 230px;
+    height: 130px;
+
     transform:
         translate(-50%, -50%)
         rotateX(65deg)
@@ -266,226 +288,298 @@ h2 strong {
 }
 
 
-/* PLACES */
+/* ============================================================
+   ROUTE
+   ============================================================ */
 
-.scene-place {
+.scene-route {
     position: absolute;
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    transform-style: preserve-3d;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
 }
 
-.place-building {
-    width: 54px;
-    height: 54px;
-    display: grid;
-    place-items: center;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, .92);
-    font-size: 28px;
-    box-shadow:
-        0 15px 30px rgba(16, 45, 25, .1);
-    transform: translateZ(25px);
-}
-
-.scene-label {
-    padding: 6px 9px;
-    border-radius: 20px;
-    background: #fff;
-    color: var(--g);
-    box-shadow:
-        0 8px 20px rgba(16, 45, 25, .08);
-    font: 700 7px "Space Grotesk";
-    letter-spacing: .13em;
-    white-space: nowrap;
-}
-
-
-/* HOME */
-
-.home-place {
-    left: 8%;
-    top: 63%;
-}
-
-
-/* SHOP */
-
-.shop-place {
-    left: 39%;
-    top: 28%;
-}
-
-
-/* CUSTOMER */
-
-.customer-place {
-    right: 7%;
-    top: 46%;
-}
-
-
-/* DELIVERY RIDER */
-
-.delivery-rider {
+.route {
     position: absolute;
-    left: 8%;
-    top: 62%;
-    width: 76px;
-    height: 80px;
-    z-index: 20;
-    transform-style: preserve-3d;
-    will-change: left, top, transform;
-}
 
+    border: 1.5px dashed rgba(22, 163, 74, .25);
 
-/* PERSON */
-
-.rider-person {
-    position: absolute;
-    left: 35px;
-    top: -10px;
-    z-index: 5;
-    font-size: 27px;
-    transform: translateZ(35px);
-    filter:
-        drop-shadow(
-            0 5px 5px rgba(0, 0, 0, .12)
-        );
-}
-
-
-/* SCOOTER */
-
-.rider-scooter {
-    position: absolute;
-    left: 0;
-    top: 18px;
-    z-index: 3;
-    font-size: 46px;
-    transform: translateZ(15px);
-    filter:
-        drop-shadow(
-            0 12px 8px rgba(0, 0, 0, .16)
-        );
-}
-
-
-/* RIDER SHADOW */
-
-.delivery-rider::after {
-    content: "";
-    position: absolute;
-    left: 4px;
-    top: 60px;
-    width: 62px;
-    height: 12px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, .1);
-    filter: blur(5px);
-    transform: translateZ(-10px);
+
+    pointer-events: none;
+}
+
+.r1 {
+    width: 285px;
+    height: 205px;
+
+    left: 50%;
+    top: 52%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-8deg);
+}
+
+.r2,
+.r3 {
+    display: none;
 }
 
 
 /* ============================================================
-   TRANSPARENT DELIVERY BOX
+   SHOP / HOME / CUSTOMER
    ============================================================ */
 
-.delivery-box {
+.scene-place {
     position: absolute;
-    left: 0;
-    top: -15px;
-    width: 45px;
-    height: 37px;
+
     z-index: 8;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 5px;
+
+    transform-origin: center bottom;
+
+    pointer-events: none;
+}
+
+
+/* IMAGE HOLDER */
+
+.place-building {
+    width: 76px;
+    height: 76px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(22, 163, 74, .4);
-    border-radius: 6px;
+    background: rgba(255, 255, 255, .68);
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255, 255, 255, .48),
-            rgba(22, 163, 74, .08)
-        );
+    border: 1px solid rgba(22, 163, 74, .08);
+
+    border-radius: 22px;
 
     box-shadow:
-        inset 0 0 16px rgba(255, 255, 255, .8),
-        0 8px 18px rgba(16, 45, 25, .08);
+        0 18px 35px rgba(16, 45, 25, .10);
 
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(8px);
+
+    overflow: visible;
+}
+
+
+/* PLACE IMAGE */
+
+.place-building img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 10px 10px rgba(16, 45, 25, .10)
+        );
+
+    user-select: none;
+    -webkit-user-drag: none;
+
+    pointer-events: none;
+}
+
+
+/* PLACE LABEL */
+
+.scene-label {
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, .94);
+
+    color: var(--g);
+
+    box-shadow:
+        0 8px 20px rgba(16, 45, 25, .08);
+
+    font:
+        700 7px "Space Grotesk";
+
+    letter-spacing: .13em;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   SHOP
+   ============================================================ */
+
+.shop-place {
+    left: 50%;
+    top: 7%;
+
+    transform: translateX(-50%);
+}
+
+
+/* ============================================================
+   HOME
+   ============================================================ */
+
+.home-place {
+    left: 6%;
+    top: 61%;
+}
+
+
+/* ============================================================
+   CUSTOMER
+   ============================================================ */
+
+.customer-place {
+    right: 4%;
+    top: 54%;
+}
+
+
+/* ============================================================
+   SAFKART PRODUCT CUBE
+   ============================================================ */
+
+.safkart-cube {
+    position: absolute;
+
+    z-index: 6;
+
+    left: 50%;
+    top: 53%;
+
+    width: 130px;
+    height: 130px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     transform:
-        translateZ(45px)
-        rotateX(8deg)
-        rotateY(-12deg);
+        translate(-50%, -50%);
 
     transform-style: preserve-3d;
+
+    filter:
+        drop-shadow(
+            0 25px 30px rgba(22, 163, 74, .16)
+        );
+
+    animation:
+        cubeFloat 4s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+.safkart-cube img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    user-select: none;
+    -webkit-user-drag: none;
+
+    pointer-events: none;
 }
 
 
-/* BOX EDGES */
+/* ============================================================
+   DELIVERY RIDER
+   ============================================================ */
 
-.delivery-box::before {
-    content: "";
+.delivery-rider {
     position: absolute;
-    inset: 3px;
-    border: 1px dashed rgba(22, 163, 74, .3);
-    border-radius: 4px;
-}
 
-.delivery-box::after {
-    content: "";
-    position: absolute;
+    z-index: 20;
+
     left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: rgba(22, 163, 74, .18);
+    top: 53%;
+
+    width: 105px;
+    height: 125px;
+
+    transform:
+        translate(-50%, -50%);
+
+    transform-origin: center center;
+
+    will-change:
+        left,
+        top,
+        transform;
+
+    pointer-events: none;
 }
 
 
-/* PRODUCTS INSIDE BOX */
+/* RIDER IMAGE */
 
-.box-item {
+.rider-image {
     position: absolute;
-    z-index: 5;
-    font-size: 10px;
-    line-height: 1;
-    transform-style: preserve-3d;
-    will-change: transform;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 13px 10px rgba(0, 0, 0, .16)
+        );
+
+    user-select: none;
+    -webkit-user-drag: none;
+
+    pointer-events: none;
 }
 
-.item-fruit {
-    left: 5px;
-    top: 7px;
-}
 
-.item-vegetable {
-    right: 4px;
-    top: 5px;
-}
+/* RIDER GROUND SHADOW */
 
-.item-grocery {
-    left: 17px;
-    top: 13px;
-}
+.delivery-rider::after {
+    content: "";
 
-.item-pet {
-    left: 7px;
-    bottom: 4px;
-}
+    position: absolute;
 
-.item-carrot {
-    right: 5px;
-    bottom: 3px;
+    left: 50%;
+    bottom: 2px;
+
+    width: 65px;
+    height: 11px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 0, 0, .12);
+
+    filter: blur(6px);
+
+    z-index: -1;
 }
 
 
@@ -495,84 +589,63 @@ h2 strong {
 
 .payment {
     position: absolute;
+
     z-index: 30;
-    left: 75%;
-    top: 48%;
+
+    left: 74%;
+    top: 51%;
+
     width: 35px;
     height: 35px;
+
     display: grid;
     place-items: center;
+
     border-radius: 50%;
+
     background: #fff;
-    box-shadow: 0 10px 25px rgba(16, 45, 25, .12);
+
+    box-shadow:
+        0 10px 25px rgba(16, 45, 25, .12);
+
     font-size: 17px;
+
     opacity: 0;
+
     transform: scale(.6);
+
     pointer-events: none;
 }
 
 .payment.show {
-    animation: paymentPop .8s ease forwards;
-}
-
-
-/* ORDER HANDOVER */
-
-.handover {
-    position: absolute;
-    z-index: 25;
-    left: 76%;
-    top: 42%;
-    font-size: 20px;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.handover.show {
-    animation: handoverPop .8s ease forwards;
+    animation:
+        paymentPop .8s ease forwards;
 }
 
 
 /* ============================================================
-   ROUTES
+   HANDOVER
    ============================================================ */
 
-.route {
+.handover {
     position: absolute;
-    z-index: 1;
-    border: 1px dashed rgba(22, 163, 74, .28);
-    border-radius: 50%;
+
+    z-index: 25;
+
+    left: 75%;
+    top: 43%;
+
+    width: 30px;
+    height: 30px;
+
+    opacity: 0;
+
     pointer-events: none;
 }
 
-.r1 {
-    width: 230px;
-    height: 110px;
-    left: 18%;
-    top: 28%;
-    transform:
-        rotate(12deg)
-        rotateX(65deg);
-}
-
-.r2 {
-    width: 260px;
-    height: 130px;
-    left: 12%;
-    top: 42%;
-    transform:
-        rotate(-15deg)
-        rotateX(65deg);
-}
-
-.r3 {
-    width: 200px;
-    height: 100px;
-    left: 20%;
-    top: 51%;
-    transform:
-        rotate(18deg)
-        rotateX(65deg);
+.handover.show {
+    animation:
+        handoverPop .8s ease forwards;
 }
 
 
@@ -582,23 +655,42 @@ h2 strong {
 
 .delivery-status {
     position: absolute;
+
     z-index: 40;
+
     left: 50%;
-    bottom: 8%;
-    transform: translateX(-50%);
+    bottom: 5%;
+
+    transform:
+        translateX(-50%);
+
     padding: 7px 11px;
+
     border-radius: 20px;
-    background: rgba(255, 255, 255, .92);
-    border: 1px solid rgba(22, 163, 74, .12);
-    box-shadow: 0 8px 20px rgba(16, 45, 25, .08);
+
+    background:
+        rgba(255, 255, 255, .94);
+
+    border:
+        1px solid rgba(22, 163, 74, .12);
+
+    box-shadow:
+        0 8px 20px rgba(16, 45, 25, .08);
+
     color: var(--g);
-    font: 700 7px "Space Grotesk";
+
+    font:
+        700 7px "Space Grotesk";
+
     letter-spacing: .12em;
+
     white-space: nowrap;
 }
 
 
-/* TICKER */
+/* ============================================================
+   TICKER
+   ============================================================ */
 
 .ticker {
     overflow: hidden;
@@ -622,7 +714,9 @@ h2 strong {
 }
 
 
-/* SECTIONS */
+/* ============================================================
+   SECTIONS
+   ============================================================ */
 
 .section {
     padding: 90px 18px;
@@ -643,7 +737,9 @@ h2 strong {
 }
 
 
-/* JOURNEY */
+/* ============================================================
+   JOURNEY
+   ============================================================ */
 
 .journey {
     background: #101712;
@@ -774,7 +870,9 @@ h2 strong {
 }
 
 
-/* ROLES */
+/* ============================================================
+   ROLES
+   ============================================================ */
 
 .roles {
     padding-bottom: 70px;
@@ -819,11 +917,12 @@ h2 strong {
 
 .role-visual {
     height: 245px;
-    background: linear-gradient(
-        145deg,
-        #eaf8ee,
-        #f8fbf9
-    );
+    background:
+        linear-gradient(
+            145deg,
+            #eaf8ee,
+            #f8fbf9
+        );
     display: grid;
     place-items: center;
     position: relative;
@@ -895,7 +994,9 @@ h2 strong {
 }
 
 
-/* FILTER */
+/* ============================================================
+   FILTER
+   ============================================================ */
 
 .filter {
     display: grid;
@@ -1005,7 +1106,9 @@ h2 strong {
 }
 
 
-/* DOWNLOAD */
+/* ============================================================
+   DOWNLOAD
+   ============================================================ */
 
 .download {
     padding-top: 25px;
@@ -1077,7 +1180,9 @@ h2 strong {
 }
 
 
-/* FOOTER */
+/* ============================================================
+   FOOTER
+   ============================================================ */
 
 .footer {
     padding: 25px 18px 35px;
@@ -1098,80 +1203,25 @@ h2 strong {
    ANIMATIONS
    ============================================================ */
 
-@keyframes boxFruit {
+@keyframes cubeFloat {
     0%,
     100% {
-        transform: translate3d(0, 0, 0) rotate(0deg);
+        transform:
+            translate(-50%, -50%)
+            translateY(0)
+            rotateZ(0deg)
+            scale(1);
     }
 
     50% {
-        transform: translate3d(3px, -5px, 8px) rotate(10deg);
+        transform:
+            translate(-50%, -50%)
+            translateY(-7px)
+            rotateZ(2deg)
+            scale(1.025);
     }
 }
 
-@keyframes boxVegetable {
-    0%,
-    100% {
-        transform: translate3d(0, 0, 0) rotate(0deg);
-    }
-
-    50% {
-        transform: translate3d(-3px, -3px, 6px) rotate(-8deg);
-    }
-}
-
-@keyframes boxGrocery {
-    0%,
-    100% {
-        transform: translate3d(0, 0, 0);
-    }
-
-    50% {
-        transform: translate3d(2px, -4px, 10px);
-    }
-}
-
-@keyframes boxPet {
-    0%,
-    100% {
-        transform: translate3d(0, 0, 0) rotate(0);
-    }
-
-    50% {
-        transform: translate3d(-2px, -5px, 7px) rotate(7deg);
-    }
-}
-
-@keyframes boxCarrot {
-    0%,
-    100% {
-        transform: translate3d(0, 0, 0) rotate(0);
-    }
-
-    50% {
-        transform: translate3d(3px, -3px, 6px) rotate(-9deg);
-    }
-}
-
-.item-fruit {
-    animation: boxFruit 1.5s ease-in-out infinite;
-}
-
-.item-vegetable {
-    animation: boxVegetable 1.7s ease-in-out infinite;
-}
-
-.item-grocery {
-    animation: boxGrocery 1.4s ease-in-out infinite;
-}
-
-.item-pet {
-    animation: boxPet 1.8s ease-in-out infinite;
-}
-
-.item-carrot {
-    animation: boxCarrot 1.6s ease-in-out infinite;
-}
 
 @keyframes paymentPop {
     0% {
@@ -1190,6 +1240,7 @@ h2 strong {
     }
 }
 
+
 @keyframes handoverPop {
     0% {
         opacity: 0;
@@ -1207,6 +1258,7 @@ h2 strong {
     }
 }
 
+
 @keyframes pulse {
     0%,
     100% {
@@ -1218,11 +1270,13 @@ h2 strong {
     }
 }
 
+
 @keyframes marquee {
     to {
         transform: translateX(-50%);
     }
 }
+
 
 @keyframes pop {
     from {
@@ -1237,7 +1291,112 @@ h2 strong {
 }
 
 
-/* REDUCED MOTION */
+/* ============================================================
+   MOBILE OPTIMIZATION
+   ============================================================ */
+
+@media (max-width: 380px) {
+
+    .hero {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .hero-3d {
+        height: 390px;
+        border-radius: 25px;
+    }
+
+    .place-building {
+        width: 64px;
+        height: 64px;
+        border-radius: 18px;
+    }
+
+    .safkart-cube {
+        width: 112px;
+        height: 112px;
+    }
+
+    .delivery-rider {
+        width: 92px;
+        height: 110px;
+    }
+
+    .r1 {
+        width: 250px;
+        height: 180px;
+    }
+
+    .home-place {
+        left: 3%;
+    }
+
+    .customer-place {
+        right: 2%;
+    }
+}
+
+
+@media (min-width: 381px) and (max-width: 430px) {
+
+    .hero-3d {
+        height: 425px;
+    }
+
+    .place-building {
+        width: 72px;
+        height: 72px;
+    }
+
+    .safkart-cube {
+        width: 125px;
+        height: 125px;
+    }
+
+    .delivery-rider {
+        width: 102px;
+        height: 122px;
+    }
+
+    .r1 {
+        width: 280px;
+        height: 200px;
+    }
+}
+
+
+@media (min-width: 431px) {
+
+    .hero-3d {
+        height: 450px;
+    }
+
+    .place-building {
+        width: 82px;
+        height: 82px;
+    }
+
+    .safkart-cube {
+        width: 145px;
+        height: 145px;
+    }
+
+    .delivery-rider {
+        width: 115px;
+        height: 138px;
+    }
+
+    .r1 {
+        width: 310px;
+        height: 220px;
+    }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
 
